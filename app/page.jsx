@@ -12,31 +12,28 @@ import DancingText from "@/components/DancingText";
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-  const [showMessage, setShowMessage] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
-  const [message, setMessage] = useState('');
+  // const [showMessage, setShowMessage] = useState(false);
+  // const [clickCount, setClickCount] = useState(0);
+  // const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    let timer;
-    if (showMessage) {
-      timer = setTimeout(() => {
-        setShowMessage(false);
-        setMessage('');
-      }, 3000); // الرسالة ستختفي بعد 3 ثوان
-    }
-    return () => clearTimeout(timer);
-  }, [showMessage]);
+  // useEffect(() => {
+  //   let timer;
+  //   if (showMessage) {
+  //     timer = setTimeout(() => {
+  //       setShowMessage(false);
+  //       setMessage('');
+  //     }, 3000); // الرسالة ستختفي بعد 3 ثوان
+  //   }
+  //   return () => clearTimeout(timer);
+  // }, [showMessage]);
 
   const handleCvClick = () => {
-    setClickCount(prev => prev + 1);
-    setShowMessage(true);
-    
-    if (clickCount === 0) {
-      setMessage("متضغطش عليا، اضغط على الصورة 😊");
-    } else {
-      setMessage("لسا مش عاملة CV، استنى عليا 😅");
-      setClickCount(0); // إعادة العداد للصفر
-    }
+    const link = document.createElement("a");
+    link.href = "/SewarSiyam-cv.pdf";
+    link.download = "SewarSiyam-cv.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -69,12 +66,12 @@ const Home = () => {
                       <FiDownload className="text-xl" />
                     </Button>
                     
-                    {/* رسالة التنبيه */}
+                    {/* رسالة التنبيه 
                     {showMessage && (
                       <div className="absolute top-full left-0 right-0 mt-2 text-accent text-sm animate-fade-in whitespace-nowrap">
                         {message}
                       </div>
-                    )}
+                    )}*/}
                   </div>
                   <div className="mb-8 xl:mb-0">
                     <Social containerStyles="flex gap-6" iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:text-primary hover:transition-all duration-500" />

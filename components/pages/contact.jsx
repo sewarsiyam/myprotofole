@@ -142,20 +142,30 @@ const Contact = () => {
           </div>
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
-              {info.map((item, index) => {
-                return (
-                  <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#f3f3f3] dark:bg-[#2727272c] text-accent rounded-md flex justify-center items-center">
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-dark/60 dark:text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+                {info.map((item, index) => {
+                  const isPhone = item.title === "Phone";
+                  const isEmail = item.title === "Email";
+                  const link = isPhone ? `tel:${item.description}` : isEmail ? `mailto:${item.description}` : null;
+
+                  return (
+                    <li key={index} className="flex items-center gap-6 group">
+                      <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#f3f3f3] dark:bg-[#3d3d3da1] text-accent group-hover:bg-accent group-hover:text-[#f3f3f3] rounded-md flex justify-center items-center">
+                        <div className="text-[28px]">{item.icon}</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-dark/60 dark:text-white/60">{item.title}</p>
+                        {link ? (
+                          <a href={link} className="text-xl">
+                            {item.description}
+                          </a>
+                        ) : (
+                          <h3 className="text-xl">{item.description}</h3>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@
 
 @layer base {
   *{
-    @apply transition-all ;
+    @apply transition-all  duration-75 ease-in-out;
   }
   body {
     @apply font-primary bg-primary-light dark:bg-primary text-primary dark:text-white leading-loose;

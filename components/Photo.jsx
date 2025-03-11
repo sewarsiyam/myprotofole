@@ -2,25 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from 'react';
 
 const Photo = () => {
-  const [showMessage, setShowMessage] = useState(false);
-
-  useEffect(() => {
-    let timer;
-    if (showMessage) {
-      timer = setTimeout(() => {
-        setShowMessage(false);
-      }, 3000);
-    }
-    return () => clearTimeout(timer);
-  }, [showMessage]);
-
-  const handlePhotoClick = () => {
-    setShowMessage(true);
-  };
-
   return (
     <div className="w-full h-full relative flex items-center justify-center">
       <div className="relative w-[350px] h-[350px] xl:w-[500px] xl:h-[500px]">
@@ -36,7 +19,6 @@ const Photo = () => {
             }
           }}
           className="absolute inset-0 z-10"
-          onClick={handlePhotoClick}
         >
           <div className="w-full h-full relative overflow-hidden rounded-full flex items-center justify-center cursor-pointer hover:scale-[0.99] transition-transform duration-200">
             <Image 
@@ -82,7 +64,7 @@ const Photo = () => {
           />
         </motion.svg>
 
-        {/* رسالة التنبيه */}
+        {/* رسالة التنبيه 
         {showMessage && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -117,7 +99,7 @@ const Photo = () => {
               </motion.div>
             </div>
           </motion.div>
-        )}
+        )}*/}
       </div>
     </div>
   );
