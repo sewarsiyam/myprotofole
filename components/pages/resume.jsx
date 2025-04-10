@@ -63,14 +63,14 @@ const experience = {
     description: 'A glimpse into my professional journey and past roles.',
     items: [
         {
-            company: "sadeim Company",
+            company: "FreeLancer",
             position: "Front-end Developer",
             duration: "Mar, 2024 - Present",
         },
         {
-            company: "FreeLancer",
+            company: "sadeim Company",
             position: "Front-end Developer",
-            duration: "Mar, 2024 - Present",
+            duration: "Mar, 2024 - Feb, 2025",
         },
         {
             company: "C.W. Company",

@@ -21,7 +21,7 @@ const info = [
   {
     icon: <FaMapMarkedAlt />,
     title: "Address",
-    description: "gaza",
+    description: "Palestine",
   },
 ];
 

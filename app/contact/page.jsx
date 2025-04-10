@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: <FaMapMarkedAlt aria-hidden="true" />,
     title: "Address",
-    description: "Gaza",
+    description: "Palestine",
     ariaLabel: "Physical address",
   },
 ];

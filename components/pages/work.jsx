@@ -13,14 +13,17 @@ const projects = [
     num: "01",
     category: 'frontend',
     title: "sewaar",
-    description: "Sewaar is an online platform for private tutoring, helping students easily book expert tutors across school and university levels through a simple registration and booking process.",
+    description: "Sewaar is an online platform for private tutoring, developed in collaboration with sadeim. It helps students easily book expert tutors across school and university levels through a simple registration and booking process.",
     stack: [
       { name: "NextJs" },
       { name: "tailwindcss" },
-      { name: "vercel" },
+      { name: "AuthNextAuth" },
+      { name: "next-intl" },
+      { name: "...." },
+
     ],
     image: '/assets/work/sewaar1.jpg',
-    live: "https://www.sewaar.com/",
+    live: "https://sewaar.netlify.app/",
     github: ""
   },
   {
@@ -32,6 +35,7 @@ const projects = [
       { name: "bootstrap 5" },
       { name: "swiper" },
       { name: "AOS" },
+      { name: "...." },
     ],
     image: '/assets/work/kaya_shoop.png',
     live: "https://sewarmsiyam.github.io/KAYA/",
@@ -40,8 +44,36 @@ const projects = [
   {
     num: "03",
     category: 'frontend',
-    title: "Highnox Hotel",
-    description: "Highnox is a hotel management dashboard I built from scratch, designed to manage bookings and real-time data with an intuitive, user-friendly interface. ",
+    title: "handleits",
+    description: "I designed and developed handleit's official website using Nuxt.js, creating a modern interface and smooth user experience. The site highlights the company's services in web and app development, design, marketing, and digital solutions.",
+    stack: [
+      { name: "NextJs" },
+      { name: "tailwindcss" },
+      { name: "swiperjs" },
+      { name: "...." },
+    ],
+    image: '/assets/work/handleits.png',
+    live: "https://handleits.netlify.app/",
+  },
+  {
+    num: "04",
+    category: 'frontend',
+    title: "sadeim",
+    description: "I designed and developed SADEIM's official website using Next.js, creating a modern interface and smooth user experience. The site highlights the company's services in web and app development, design, marketing, and digital solutions.",
+    stack: [
+      { name: "NextJs" },
+      { name: "tailwindcss" },
+      { name: "swiperjs" },
+      { name: "...." },
+    ],
+    image: '/assets/work/sadeim.png',
+    live: "https://www.sadeim.com/",
+  },
+  {
+    num: "05",
+    category: 'frontend',
+    title: "Highnox",
+    description: "Highnox is a hotel management dashboard I built from scratch, designed to manage bookings and real-time data with an intuitive, user-friendly interface.",
     stack: [
       { name: "bootstrap" },
       { name: "chart" },
@@ -53,7 +85,7 @@ const projects = [
     github: "https://github.com/sewarMsiyam/Highnox"
   },
   {
-    num: "04",
+    num: "06",
     category: 'frontend',
     title: "oloom plus",
     description: "Oloom Plus is an educational platform offering interactive courses in subjects like science and mathematics, with a focus on enhancing student learning.",
@@ -64,9 +96,13 @@ const projects = [
     ],
     image: '/assets/work/oloomplus.png',
     live: "https://oloomplus.com/",
-    // github: "https://github.com/sewarMsiyam/Highnox"
   },
 ]
+
+
+// https://handleits.netlify.app/
+// https://sewaar.netlify.app/
+// https://sewarsadeim.netlify.app/
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -91,7 +127,7 @@ const Work = () => {
               <p className="text-primary/60 dark:text-white/60">{project.description}</p>
               <ul className="flex gap-4">
                 {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
+                  <li key={index} className=" text-accent">
                     {item.name}
                     {index !== project.stack.length - 1 && ","}
                   </li>
